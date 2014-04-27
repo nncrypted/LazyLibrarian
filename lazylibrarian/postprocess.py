@@ -30,14 +30,7 @@ def processDir():
 		logger.info('No downloads are found. Nothing to process.')
 	else:
 		ppcount=0
-		for directory in downloads:
-                    if "LL.(" in directory:
-                            bookID = str(directory).split("LL.(")[1].split(")")[0];
-                logger.debug("Book with id: " + str(bookID) + " is in downloads");
-                pp_path = os.path.join(processpath, directory)
-
-                if (os.path.exists(pp_path)):
-                 logger.debug('Found folder %s.' % pp_path)
+		
 		for book in snatched:
 			if book['NZBtitle'] in downloads:
 				pp_path = os.path.join(processpath, book['NZBtitle'])
