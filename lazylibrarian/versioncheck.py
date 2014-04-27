@@ -5,7 +5,7 @@ from lazylibrarian import logger, version
 
 import lib.simplejson as simplejson
 
-user = "DobyTang"
+user = "dobytang"
 #branch = "master"
 repo="lazylibrarian"
 
