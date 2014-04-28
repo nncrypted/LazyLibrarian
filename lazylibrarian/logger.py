@@ -8,6 +8,16 @@ from lazylibrarian import formatter
 MAX_SIZE = 51200 # 5 Bytes
 MAX_FILES = 5
 
+ERROR = logging.ERROR
+WARNING = logging.WARNING
+MESSAGE = logging.INFO
+DEBUG = logging.DEBUG
+
+reverseNames = {u'ERROR': ERROR,
+                u'WARNING': WARNING,
+                u'INFO': MESSAGE,
+                u'DEBUG': DEBUG}
+
 
 # Simple rotating log handler that uses RotatingFileHandler
 class RotatingLogger(object):
