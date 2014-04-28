@@ -39,6 +39,31 @@
 
 <%def name="javascriptIncludes()">
     <script src="js/libs/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+<!--
+\$(document).ready(function(){
+    \$('#minLevel').change(function(){
+        url = '$sbRoot/errorlogs/viewlog/?minLevel='+\$(this).val()
+        window.location.href = url
+    });
+});
+//-->
+</script>
+
+<div class="h2footer align-right"><b>Minimum logging level to display:</b> <select name="minLevel" id="minLevel">
+#set $levels = $reverseNames.keys()
+$levels.sort(lambda x,y: cmp($reverseNames[$x], $reverseNames[$y]))
+#for $level in $levels:
+<option value="$reverseNames[$level]" #if $minLevel == $reverseNames[$level] then "selected=\"selected\"" else ""#>$level.title()</option>
+#end for
+</select>
+</div>
+<br />
+<div class="align-left"><pre>
+$logLines
+</pre>
+</div>
+<br />
     <script>
     $(document).ready(function()
     {
